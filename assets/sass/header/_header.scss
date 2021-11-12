@@ -1,0 +1,87 @@
+$bgBaner : rgb(91, 91, 255);
+$bgForm : rgb(240, 240, 240);
+$white : white;
+$bgBtn : rgb(1, 1, 170);
+$lightGray : lightgray;
+
+@mixin dFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+@mixin form {
+    font-family: "iransans";
+    height: 35px;
+    margin: 5px 0;
+}
+// $font : "iransans";
+
+
+.header{
+    @include dFlex();
+    width: 100%;
+    height: auto;
+    .header-baner{
+        width: 80%;
+        height: 220px;
+        background-color: $bgBaner;
+        font-family: "iransans";
+        @include dFlex();
+        flex-direction: column;
+        position: relative;
+        p{
+            text-align: center;
+            font-size: 13px;
+            color: $white;
+            padding: 0 30px;
+        }
+        button{
+            background-color: $bgBtn;
+            @include btn();
+            font-family: "iransans";
+            padding: 5px 10px;
+            font-size: 12px;
+            color: $white;
+            position: absolute;
+            bottom: 30px;
+        }
+    }
+    .header-form{
+        width: 30%;
+        height: 220px;
+        background-color: $bgForm;
+        form{
+            width: 100%;
+            height: 100%;
+            @include dFlex();
+            flex-direction: column;
+            input{
+                text-align: center;
+                font-size: 12px;
+                border: 1px solid $lightGray;
+                width: 90%;
+                outline: none;
+                padding: 0 10px;
+                @include form();
+            }
+            button{
+                background-color: $bgBaner;
+                @include btn();
+                width: 90%;
+                color: $white;
+                font-size: 11px;
+                @include form();               
+            }
+            a{
+                font-size: 12px;
+                margin: 25px;
+                margin-top: 30px !important;
+            }
+        }
+    }
+}
